@@ -7,4 +7,10 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 export LSCOLORS=""
 
-PROMPT='%{$fg[cyan]%}%~%{$reset_color%}%{$fg[red]%}|%{$reset_color%}$(git_prompt_info)%{$fg[cyan]%}⇒%{$reset_color%} '
+function hostname_if_remote() {
+  if [ -n "${SSH_CLIENT+x}" ]; then
+    echo "%{$fg[red]%}%m%{$reset_color%}:"
+  fi
+}
+
+PROMPT='$(hostname_if_remote)%{$fg[cyan]%}%~%{$reset_color%}%{$fg[red]%}|%{$reset_color%}$(git_prompt_info)%{$fg[cyan]%}⇒%{$reset_color%} '
