@@ -18,7 +18,7 @@ function hostname_if_remote() {
 
 PROMPT='$(hostname_if_remote)%{$fg[cyan]%}%~%{$reset_color%}$(git_prompt_info)%{$GIT_DIRTY_COLOR%}%{$reset_color%}%{$fg[cyan]%}⇒%{$reset_color%} '
 
-GIT_DIRTY_COLOR=$FG[160]
+GIT_DIRTY_COLOR="" #$FG[160]
 GIT_CLEAN_COLOR=$FG[082]
 GIT_PROMPT_INFO=$FG[012]
 
